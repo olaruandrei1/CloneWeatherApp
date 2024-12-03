@@ -63,7 +63,6 @@ struct SunTrackerView: View {
         weatherService.fetchWeather(for: "London") { result in
             switch result {
             case .success(let weatherResponse):
-                // Access sys directly, as sys is non-optional and both sunset and sunrise are Int
                 let sys = weatherResponse.sys
                 self.sunsetTime = formatTime(timestamp: sys.sunset)
                 self.sunriseTime = formatTime(timestamp: sys.sunrise)
